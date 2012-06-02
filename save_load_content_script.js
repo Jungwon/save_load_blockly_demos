@@ -17,37 +17,25 @@ var URL = webkitURL;
 var Reader = FileReader;
 
 (function(){
-var div = doc.createElement( 'div' );
-div.setAttribute( 'style', 'position: absolute; top: 80%;' );
+  var div = doc.createElement( 'div' );
+  div.setAttribute( 'style', 'position: absolute; top: 80%;' );
 
-// saveButton should not leave this scope.
-//<button onclick="save();">Save Data</button>
-// display: none instead of visibility: hidden
-// don't define onclick= because that executes in the page context
-// which isolated from the extension context.
-div.innerHTML = '<button id="save">Save</button>' +
-'<button id="fakeload">Load</button>' +
-'<input type="file" id="load" style="display: none;"/>';
+  // Display 'Load' button instead of 'Choose File' default input text.
+  // http://www.quirksmode.org/dom/inputfile.html
+  div.innerHTML = '<button id="save">Save</button>' +
+  '<button id="fakeload">Load</button>' +
+  '<input type="file" id="load" style="display: none;"/>';
 
-// Display 'Load' button instead of
-// 'Choose File' default input text.
-// http://www.quirksmode.org/dom/inputfile.html
-body.appendChild( div );
+  body.appendChild( div );
 })();
 
+var loadInput = doc.getElementById( 'load' );
+loadInput.addEventListener( 'change', load, false );
 doc.getElementById( 'fakeload' ).onclick = function() {  loadInput.click(); };
 doc.getElementById( 'save' ).onclick = save;
 
-var loadInput = doc.getElementById( 'load' );
-
 var downloadLink = doc.createElement( 'a' );
 downloadLink.download = 'maze.xml';
-
-/*
-window.realClick = function() {
-  loadInput.click();
-}
-*/
 
 function save() {
   var xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
@@ -91,7 +79,4 @@ function load( event ) {
 
   reader.readAsText( files[ 0 ] );
 }
-
-// Add events.
-loadInput.addEventListener( 'change', load, false );
 })();

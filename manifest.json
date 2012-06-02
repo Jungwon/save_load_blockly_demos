@@ -1,0 +1,17 @@
+{
+  "name": "Save & load",
+  "version": "1.0",
+  "minimum_chrome_version": "19",
+  "description": "Provides save and load buttons for Blockly pages.",
+  "permissions" :
+    [
+      "*://blockly-demo.appspot.com/*",
+      "tabs"
+    ],
+  "content_scripts": [
+    {
+      "matches": [ "*://blockly-demo.appspot.com/*" ],
+      "js": [ "inject.js" ]
+    }
+  ]
+}

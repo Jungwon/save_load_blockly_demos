@@ -12,4 +12,4 @@
 - http://www.quirksmode.org/dom/inputfile.html
 
 #### License
-- Same license as blockly, [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
+- save_load_blockly_demos is released under the same license as blockly. [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)

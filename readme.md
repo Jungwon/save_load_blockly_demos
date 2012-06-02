@@ -1,5 +1,7 @@
 # Save and load for blockly demos
 
+![Save and load buttons.](https://github.com/bootstraponline/save_load_blockly_demos/raw/master/save_load_buttons.png)
+
 - https://code.google.com/p/google-blockly/
 - https://blockly-demo.appspot.com/blockly/demos/maze/index.html
 

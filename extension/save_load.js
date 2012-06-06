@@ -31,32 +31,32 @@ var Reader = FileReader;
 
 var loadInput = doc.getElementById( 'load' );
 loadInput.addEventListener( 'change', load, false );
-doc.getElementById( 'fakeload' ).onclick = function() {  loadInput.click(); };
+doc.getElementById( 'fakeload' ).onclick = function() { loadInput.click(); };
 doc.getElementById( 'save' ).onclick = save;
 
 var downloadLink = doc.createElement( 'a' );
 downloadLink.download = 'maze.xml';
 
 function save() {
-  var xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
-  var data = Blockly.Xml.domToText(xml);
+  var xml = Blockly.Xml.workspaceToDom( Blockly.mainWorkspace );
+  var data = Blockly.Xml.domToText( xml );
 
   // Store data in blob.
   var builder = new BlobBuilder();
-  builder.append(data);
+  builder.append( data );
   var	blob = builder.getBlob();
 
   // Click on blob URL then delete the URL.
-  var blobURL = URL.createObjectURL(blob);
+  var blobURL = URL.createObjectURL( blob );
   downloadLink.href = blobURL;
 
   downloadLink.click();
-  webkitURL.revokeObjectURL(blobURL);
-}
+  webkitURL.revokeObjectURL( blobURL );
+};
 
 // Run on loadInput.click() from window.realClick.
 function load( event ) {
-  var files = event.target.files
+  var files = event.target.files;
   
   // Only allow uploading one file.
   if ( files.length !== 1 )
@@ -66,10 +66,10 @@ function load( event ) {
   var reader = new Reader();
   reader.onloadend = function( event ) {
     var target = event.target;
-    // 2 == FileReader.DONE
-    if ( target.readyState == 2 ) {
+    // 2 === FileReader.DONE
+    if ( target.readyState === 2 ) {
       var xml = Blockly.Xml.textToDom( target.result );
-      Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xml);
+      Blockly.Xml.domToWorkspace( Blockly.mainWorkspace, xml );
     }
     // Reset value of input after loading
     // because Chrome will not fire a 'change' event
@@ -78,5 +78,5 @@ function load( event ) {
   };
 
   reader.readAsText( files[ 0 ] );
-}
+};
 })();

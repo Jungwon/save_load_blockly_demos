@@ -10,6 +10,7 @@
 - https://github.com/eligrey/BlobBuilder.js
 - https://github.com/kurrik/chrome-extensions/blob/master/script-jquery/contentscript.js
 - http://www.quirksmode.org/dom/inputfile.html
+- http://yuiblog.com/assets/High_Perf_JavaScr_Ch2.pdf
 
 #### License
 - save_load_blockly_demos is released under the same license as blockly. [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)

@@ -11,7 +11,6 @@ save and load code based on:
 // http://www.nczonline.net/blog/2009/02/10/javascript-variable-performance/
 var doc = document;
 var body = doc.body;
-var win = window;
 var BlobBuilder = WebKitBlobBuilder;
 var URL = webkitURL;
 var Reader = FileReader;
@@ -54,7 +53,6 @@ function save() {
   webkitURL.revokeObjectURL( blobURL );
 };
 
-// Run on loadInput.click() from window.realClick.
 function load( event ) {
   var files = event.target.files;
   

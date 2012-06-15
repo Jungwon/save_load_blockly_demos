@@ -2,6 +2,8 @@
 
 ![Save and load buttons.](https://github.com/bootstraponline/save_load_blockly_demos/raw/master/save_load_buttons.png)
 
+This feature is being integrated upstream! See [issue 7](https://code.google.com/p/blockly/issues/detail?id=7).
+
 - https://code.google.com/p/google-blockly/
 - https://blockly-demo.appspot.com/blockly/demos/maze/index.html
 
